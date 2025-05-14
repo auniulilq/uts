@@ -33,5 +33,30 @@
            <p>Sudah punya akun? <a href="login.html">Login di sini</a></p>
         </form>
     </div>
+     <script>
+        function redirectToLogin() {
+            const teleponInput = document.getElementById('telepon');
+            const teleponError = document.getElementById('telepon-error');
+            const phoneNumber = teleponInput.value;
+            const isNumeric = /^[0-9]+$/.test(phoneNumber);
+
+            if (!isNumeric) {
+                teleponError.style.display = 'block';
+                return false; // Mencegah pengiriman dan pengalihan jika telepon tidak valid
+            } else {
+                teleponError.style.display = 'none';
+                document.getElementById('redirect-message').style.display = 'block';
+                setTimeout(function() {
+                    window.location.href = '/login';
+                }, 3000); // Redirect setelah 3 detik
+                return false; // Mencegah pengiriman formulir standar (kita melakukan pengalihan dengan JS)
+            }
+        }
+
+        const teleponInput = document.getElementById('telepon');
+        teleponInput.addEventListener('input', function() {
+            this.value = this.value.replace(/[^0-9]/g, '');
+        });
+    </script>
 </body>
 </html>
