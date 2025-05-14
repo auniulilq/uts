@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registrasi</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Registrasi</h1>
+        <form action="proses registrassi.html" method="POST">
+            <div>
+                <label for="email">Alamat Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div>
+                <label for="password">Kata Sandi:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+           <div>
+                <label for="telepon">Nomor Telepon:</label>
+                <input type="tel" id="telepon" name="telepon" pattern="[0-9]*" title="Masukkan hanya angka">
+                <p id="telepon-error" class="error-message" style="display: none;">Nomor telepon hanya boleh berisi angka.</p>
+            </div>
+            <div>
+                <label for="tanggal_lahir">Tanggal Lahir:</label>
+                <input type="date" id="tanggal_lahir" name="tanggal_lahir">
+            </div>
+            <div>
+                <label for="alamat">Alamat Lengkap:</label>
+                <textarea id="alamat" name="alamat"></textarea>
+            </div>
+           <a href="proses registrasi.html"><button type="button">Daftar</button></a>
+           <p>Sudah punya akun? <a href="login.html">Login di sini</a></p>
+        </form>
+    </div>
+</body>
+</html>
